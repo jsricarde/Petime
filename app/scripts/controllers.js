@@ -1,14 +1,25 @@
 'use strict';
 
 angular.module('Petime')
-    .controller('IndexController', ['$scope', function($scope) {
-       /* //get the dish
-        var dish = menuFactory.getDish(0);
-        $scope.dish = dish;
-        //get the promotion
-        var promotion = menuFactory.getPromotion(0);
-        $scope.promo = promotion;
-        //get the leader
-        var leader = corporateFactory.getLeader(0);
-        $scope.leader = leader;*/
+    .controller('IndexController', ['userFactory', '$scope', function (userFactory, $scope) {
+
+        $scope.registerData = {
+            username: "",
+            first_name: "",
+            last_name: "",
+            email: "",
+            password: ""
+        };
+        $scope.doSubmitUser = function () {
+            userFactory.instertUser($scope.registerData).success(function (data) {
+                console.log(data);
+                //$scope.showAlert();
+                $scope.registerData = {};
+                alert("Registration successfull");
+                //$state.go('tab.dash');
+            }).error(function (error) {
+                console.log(error);
+                //$scope.showAlert(error);
+            });
+        }
     }])
