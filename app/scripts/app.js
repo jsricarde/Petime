@@ -17,6 +17,7 @@ angular.module('Petime', ['ui.router'])
                 },
                 'footer': {
                     templateUrl: 'views/footer.html',
+                    controller: 'IndexController'
                 }
             }
 

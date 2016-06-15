@@ -286,3 +286,15 @@ footer.page-footer {
 .text_b{
     text-align: center !important;
 }
+.text_f{
+    color: #fff !important;
+    font-size: 35px !important;
+    text-align: center !important;
+}
+.text_github{
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    left: 20%;
+}
